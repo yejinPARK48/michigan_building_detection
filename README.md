@@ -61,6 +61,7 @@ Predicted vs. ground-truth (Microsoft Building Footprints) building counts per b
 group in Washtenaw — the spatial patterns match closely:
  
 <img src="docs/washtenaw_bg_map.png" alt="Washtenaw predicted vs ground truth" width="700">
+
 ### Per-PUMA estimates (9 Michigan PUMAs)
  
 With the model validated, it was applied to all 9 target PUMAs. In total it predicts

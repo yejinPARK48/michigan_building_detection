@@ -62,7 +62,9 @@ sparse, mostly-forest Upper Peninsula (~5 buildings/km²).
 
 
 The 9 target PUMAs cover ~25.2% of Michigan's land area.
-![PUMA coverage map](docs/puma_coverage_map.png)
+<p align="center">
+  <img src="docs/puma_coverage_map.png" alt="PUMA coverage map" width="500">
+</p>
 
 ### Model accuracy
 

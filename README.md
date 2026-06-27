@@ -41,13 +41,33 @@ The repository follows the processing stages in order:
 | 6 | `06_puma_estimation/` | Whole-PUMA inference and block-group aggregation |
 
 ## Results
-
-### Per-PUMA summary (9 Michigan PUMAs)
-
-Across the 9 target PUMAs, the model predicts **685,039 buildings**. Density spans
-two orders of magnitude — from dense Detroit-area PUMAs (~750 buildings/km²) to the
-sparse, mostly-forest Upper Peninsula (~5 buildings/km²).
-
+ 
+### Model accuracy and validation
+ 
+Accuracy is measured against **Microsoft Building Footprints** as ground truth (MAE
+and Pearson r compare predicted vs. footprint-derived building counts).
+ 
+Trained on 7,462 curated tiles from the 9 PUMAs (seg-only U-Net, ResNet34 encoder):
+ 
+| Model | IoU | MAE | Pearson r |
+|---|---|---|---|
+| Seg-only U-Net | 0.555 | 1.54 | 0.957 |
+ 
+**Generalization test — Washtenaw County** (held out of training, 32,703 tiles):
+ 
+- Tile level — MAE **1.42**, Pearson r **0.954**
+- Block-group level (308 block groups) — MAE 90.13, Pearson r **0.964**
+Predicted vs. ground-truth (Microsoft Building Footprints) building counts per block
+group in Washtenaw — the spatial patterns match closely:
+ 
+<img src="docs/washtenaw_bg_map" alt="Washtenaw predicted vs ground truth" width="700">
+### Per-PUMA estimates (9 Michigan PUMAs)
+ 
+With the model validated, it was applied to all 9 target PUMAs. In total it predicts
+**685,039 buildings**. Density spans two orders of magnitude — from dense
+Detroit-area PUMAs (~750 buildings/km²) to the sparse, mostly-forest Upper
+Peninsula (~5 buildings/km²).
+ 
 | PUMA | Total buildings | Buildings / km² |
 |---|---:|---:|
 | 2600100 | 113,414 | 5.09 |
@@ -59,28 +79,14 @@ sparse, mostly-forest Upper Peninsula (~5 buildings/km²).
 | 2602903 | 64,491 | 360.97 |
 | 2603203 | 71,185 | 753.29 |
 | 2603212 | 24,107 | 361.63 |
-
-
+ 
+Density is buildings per km² of land area (ALAND); see
+[`data/puma_building_summary.csv`](data/puma_building_summary.csv).
+ 
 The 9 target PUMAs cover ~25.2% of Michigan's land area.
-<p align="center">
-  <img src="docs/puma_coverage_map.png" alt="PUMA coverage map" width="500">
-</p>
+ 
+<img src="docs/puma_coverage_map.png" alt="PUMA coverage map" width="500">
 
-### Model accuracy
-
-Accuracy is measured against **Microsoft Building Footprints** as ground truth (MAE
-and Pearson r compare predicted vs. footprint-derived building counts).
-
-Trained on 7,462 curated tiles from the 9 PUMAs (seg-only U-Net, ResNet34 encoder):
-
-| Model | IoU | MAE | Pearson r |
-|---|---|---|---|
-| Seg-only U-Net | 0.555 | 1.54 | 0.957 |
-
-**Generalization test — Washtenaw County** (held out of training, 32,703 tiles):
-
-- Tile level — MAE **1.42**, Pearson r **0.954**
-- Block-group level (308 block groups) — MAE 90.13, Pearson r **0.964**
 
 ## Method
 

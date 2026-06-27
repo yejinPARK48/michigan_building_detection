@@ -60,7 +60,7 @@ Trained on 7,462 curated tiles from the 9 PUMAs (seg-only U-Net, ResNet34 encode
 Predicted vs. ground-truth (Microsoft Building Footprints) building counts per block
 group in Washtenaw — the spatial patterns match closely:
  
-<img src="docs/washtenaw_bg_map" alt="Washtenaw predicted vs ground truth" width="700">
+<img src="docs/washtenaw_bg_map.png" alt="Washtenaw predicted vs ground truth" width="700">
 ### Per-PUMA estimates (9 Michigan PUMAs)
  
 With the model validated, it was applied to all 9 target PUMAs. In total it predicts

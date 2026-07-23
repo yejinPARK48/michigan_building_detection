@@ -69,17 +69,17 @@ With the model validated, it was applied to all 9 target PUMAs. In total it pred
 Detroit-area PUMAs (~750 buildings/km²) to the sparse, mostly-forest Upper
 Peninsula (~5 buildings/km²).
  
-| PUMA | Total buildings | Buildings / km² |
-|---|---:|---:|
-| 2600100 | 113,414 | 5.09 |
-| 2600802 | 57,275 | 66.70 |
-| 2601200 | 92,167 | 20.60 |
-| 2601600 | 118,850 | 17.63 |
-| 2601701 | 92,344 | 42.36 |
-| 2601703 | 51,206 | 314.07 |
-| 2602903 | 64,491 | 360.97 |
-| 2603203 | 71,185 | 753.29 |
-| 2603212 | 24,107 | 361.63 |
+| PUMA | Total buildings | Buildings / km² | Footprint area (km²) | % land covered |
+|---|---:|---:|---:|---:|
+| 2600100 | 113,414 | 5.09 | 22.827 | 0.10% |
+| 2600802 | 57,275 | 66.70 | 16.050 | 1.87% |
+| 2601200 | 92,167 | 20.60 | 20.954 | 0.47% |
+| 2601600 | 118,850 | 17.63 | 28.538 | 0.42% |
+| 2601701 | 92,344 | 42.36 | 21.031 | 0.96% |
+| 2601703 | 51,206 | 314.07 | 10.500 | 6.44% |
+| 2602903 | 64,491 | 360.97 | 19.425 | 10.87% |
+| 2603203 | 71,185 | 753.29 | 12.264 | 12.98% |
+| 2603212 | 24,107 | 361.63 | 7.231 | 10.85% |
  
 Density is buildings per km² of land area (ALAND); see
 [`data/puma_building_summary.csv`](data/puma_building_summary.csv).
